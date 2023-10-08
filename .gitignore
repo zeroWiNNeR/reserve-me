@@ -24,3 +24,5 @@ hs_err_pid*
 replay_pid*
 
 /.idea
+/frontend/dist
+/frontend/node_modulest
