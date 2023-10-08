@@ -10,6 +10,7 @@
       :name="props.name"
       :required="props.required"
       :disabled="props.disabled"
+      :aria-label="props.ariaLabel"
       v-maska="props.mask"
       :class="{ active: isFocused || isMouseEnter, password: props.type === 'password' && props.name === 'password' }"
       @input="onInput"
@@ -72,6 +73,10 @@ const props = defineProps({
   mask: {
     type: [String, Object],
     default: null
+  },
+  ariaLabel: {
+    type: String,
+    default: ''
   }
 })
 

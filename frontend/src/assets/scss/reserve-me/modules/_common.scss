@@ -91,3 +91,13 @@ html.open-menu, body.open-menu {
     padding: $vertical-offset-mobile $section-side-offset-mobile;
   }
 }
+
+a {
+  color: $dark-blue;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
