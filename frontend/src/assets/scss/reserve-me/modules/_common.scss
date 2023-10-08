@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  font-size: 10px;
+}
+
+//html, body {
+//  overflow-x: hidden;
+//}
+
+body::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 2.4rem;
+  background: black;
+}
+
+@media screen and (max-width: 374px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  html {
+    font-size: calc(10px + 10 * (100vw - 375px) / 391);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: calc(8px + 2.7 * (100vw - 768px) / 255);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  html {
+    font-size: calc(7.4px + 2 * (100vw - 1024px) / 255);
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  html {
+    font-size: calc(9px + 1 * (100vw - 1280px) / 159);
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: calc(10px + 1 * (100vw - 1440px) / 240);
+  }
+}
+
+
+html.open-menu, body.open-menu {
+  overflow: hidden;
+}
+
+body {
+  background-color: white;
+
+  &.disabled {
+    overflow: hidden;
+  }
+}
+
+$containerSideOffsetDesktop: $SECTION_SIDE_OFFSET_DESKTOP;
+$containerSideOffsetMobile: $SECTION_SIDE_OFFSET_MOBILE;
+
+$verticalOffsetMobile: $VERTICAL_OFFSET_MOBILE;
+$verticalOffsetDesktop: $VERTICAL_OFFSET_DESKTOP;
+
+.section {
+  @include tablet-desktop {
+    &:not(&--large) {
+      padding: $verticalOffsetDesktop $containerSideOffsetDesktop;
+    }
+  }
+
+  @include mobile {
+    &:not(&--large) {
+      padding: $verticalOffsetMobile $containerSideOffsetMobile;
+    }
+  }
+
+  &--large {
+    padding: 0;
+  }
+}
