@@ -37,7 +37,7 @@ module.exports = {
     'vue/no-deprecated-events-api': 'off',
     'vue/no-mutating-props': 'off',
     'no-plusplus': 'off',
-    "prefer-destructuring": ["error", {"object": false, "array": false}],
+    'prefer-destructuring': ['error', {'object': false, 'array': false}],
 
     quotes: ['warn', 'single', {avoidEscape: true}],
 
@@ -46,6 +46,10 @@ module.exports = {
     'no-unused-vars': 'off',
 
     // allow debugger during development only
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+
+    'prettier/prettier': ['error'],
+
+    '@typescript-eslint/no-explicit-any': 'off'
   }
 }

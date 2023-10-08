@@ -1,0 +1,31 @@
+.fx {
+  display: flex;
+}
+
+.fx-cl {
+  display: flex;
+  flex-direction: column;
+}
+
+.fx-rw {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fx-ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.row {
+  position: relative;
+  width: 100%;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}

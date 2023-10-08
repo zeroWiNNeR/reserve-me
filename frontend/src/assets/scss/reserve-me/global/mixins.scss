@@ -53,3 +53,9 @@ $maxWidth: 144;
     font-size: calc(#{$mobSize + rem} + #{$addMobSize} * ((100vw - 36rem) / #{$maxWidth}));
   }
 }
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}

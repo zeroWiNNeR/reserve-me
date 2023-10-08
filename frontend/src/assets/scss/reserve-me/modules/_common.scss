@@ -7,6 +7,7 @@
 h1, h2, h3, h4, h5, h6, p {
   padding: 0;
   margin: 0;
+  line-height: 100%;
 }
 
 a {
@@ -14,6 +15,7 @@ a {
 }
 
 html {
+  font-family: 'Montserrat Regular';
   font-size: 10px;
 }
 
@@ -21,13 +23,22 @@ html {
 //  overflow-x: hidden;
 //}
 
+body {
+  background-color: $white;
+  color: $dark-blue;
+
+  &.disabled {
+    overflow: hidden;
+  }
+}
+
 body::-webkit-scrollbar {
   width: 0.3rem;
 }
 
 body::-webkit-scrollbar-thumb {
   border-radius: 2.4rem;
-  background: black;
+  background: $brand;
 }
 
 @media screen and (max-width: 374px) {
@@ -71,34 +82,12 @@ html.open-menu, body.open-menu {
   overflow: hidden;
 }
 
-body {
-  background-color: white;
-
-  &.disabled {
-    overflow: hidden;
-  }
-}
-
-$containerSideOffsetDesktop: $SECTION_SIDE_OFFSET_DESKTOP;
-$containerSideOffsetMobile: $SECTION_SIDE_OFFSET_MOBILE;
-
-$verticalOffsetMobile: $VERTICAL_OFFSET_MOBILE;
-$verticalOffsetDesktop: $VERTICAL_OFFSET_DESKTOP;
-
 .section {
   @include tablet-desktop {
-    &:not(&--large) {
-      padding: $verticalOffsetDesktop $containerSideOffsetDesktop;
-    }
+    padding: $vertical-offset-desktop $section-side-offset-desktop;
   }
 
   @include mobile {
-    &:not(&--large) {
-      padding: $verticalOffsetMobile $containerSideOffsetMobile;
-    }
-  }
-
-  &--large {
-    padding: 0;
+    padding: $vertical-offset-mobile $section-side-offset-mobile;
   }
 }
