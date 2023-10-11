@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <conversionRule conversionWord="level"
+                    converterClass="com.reserveme.backend.config.logger.LogLevelStringConverter"/>
+
+    <if condition="property(&quot;rm.logging.logstash&quot;).length() > 0">
+        <then>
+            <appender class="net.logstash.logback.appender.LogstashTcpSocketAppender" name="stash">
+                <destination>${rm.logging.logstash}</destination>
+                <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+                    <providers>
+                        <mdc/>
+                        <timestamp/>
+                        <pattern>
+                            <pattern>
+                                {
+                                "ApplicationName": "${rm.application.name}",
+                                "Namespace": "${rm.logging.namespace}",
+                                "Level": "%level",
+                                "Message": "%message",
+                                "Traceparent": "%X{traceparent}",
+                                "TimeStamp": "%date{yyyy-MM-dd'T'HH:mm:ss.SSSXXX, UTC}",
+                                "Logger": "%logger"
+                                }
+                            </pattern>
+                        </pattern>
+                        <stackTrace>
+                            <fieldName>StackTrace</fieldName>
+                        </stackTrace>
+                    </providers>
+                </encoder>
+            </appender>
+
+            <root level="${rm.logging.level:-INFO}">
+                <appender-ref ref="stash"/>
+            </root>
+        </then>
+    </if>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{HH:mm:ss.SSS} [%X{traceparent}] %-5level %logger{36} - %msg%n%rEx{full}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="${rm.logging.level:-INFO}">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
