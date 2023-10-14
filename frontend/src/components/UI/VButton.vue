@@ -1,5 +1,5 @@
 <template>
-  <button class="button" :type="props.type" :aria-label="props.ariaLabel">
+  <button class="button" :type="props.type" :aria-label="props.ariaLabel" :class="props.class">
     <slot></slot>
     {{ props.text }}
     <v-icon v-if="props.icon" :icon="props.icon" />
@@ -29,13 +29,17 @@ const props = defineProps({
   text: {
     type: String,
     default: ''
+  },
+  class: {
+    type: String,
+    default: ''
   }
 })
 </script>
 
 <style lang="scss" scoped>
 .button {
-  width: 20rem;
+  width: 100%;
   padding: 1rem;
   border-radius: 0.4rem;
   background-color: $brand;

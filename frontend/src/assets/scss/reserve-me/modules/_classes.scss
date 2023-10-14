@@ -29,3 +29,13 @@
   visibility: hidden;
   opacity: 0;
 }
+
+.mt25 {
+  margin-top: 2.5rem;
+}
+
+.mt25-mb {
+  @include mobile {
+    margin-top: 2.5rem;
+  }
+}

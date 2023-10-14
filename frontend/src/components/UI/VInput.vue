@@ -55,8 +55,7 @@ const props = defineProps({
   },
   name: {
     type: String,
-    default: 'text',
-    required: true
+    default: 'text'
   },
   placeholder: {
     type: String,
@@ -98,7 +97,8 @@ const onBlur = (event) => {
   emit('blur', event)
   event.target.value === '' ? (isFocused.value = false) : ''
 }
-const showPassword = () => {
+const showPassword = (event) => {
+  event.preventDefault()
   const inputPassword = document.querySelector('.password')
   if (inputPassword.getAttribute('type') === 'password') {
     inputPassword.setAttribute('type', 'text')
@@ -113,6 +113,10 @@ const showPassword = () => {
   display: flex;
   column-gap: 1rem;
   align-items: center;
+  margin-bottom: 2.5rem;
+  @include mobile {
+    margin-bottom: 2rem;
+  }
   &:has(input:disabled) {
     .label-top {
       display: none;
@@ -189,6 +193,8 @@ const showPassword = () => {
   }
 
   .error-msg {
+    position: absolute;
+    bottom: 0;
     display: block;
     font-family: 'Montserrat Medium';
     font-size: 1.2rem;

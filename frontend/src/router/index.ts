@@ -17,6 +17,14 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       layout: 'DefaultLayout'
     }
+  },
+  {
+    path: '/auth',
+    name: 'auth',
+    component: () => import(/* webpackChunkName: "about" */ '@/pages/auth/Auth.vue'),
+    meta: {
+      layout: 'AuthLayout'
+    }
   }
 ]
 

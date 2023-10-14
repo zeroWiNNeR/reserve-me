@@ -3,7 +3,10 @@
     <label class="chbx__checkbox-label" :for="props.name">
       <input type="checkbox" class="chbx__checkbox-input" :id="props.name" :name="props.name" />
     </label>
-    <p class="chbx__checkbox-text">{{ props.text }}</p>
+    <p v-if="props.text" class="chbx__checkbox-text">{{ props.text }}</p>
+    <p v-else class="chbx__checkbox-text">
+      <slot></slot>
+    </p>
   </div>
 </template>
 
@@ -105,7 +108,7 @@ const props = defineProps({
     user-select: none;
   }
   &-text {
-    font-size: 1.4rem;
+    @include adaptive-font(1.2, 1.1);
     line-height: 100%;
   }
   .error-message {

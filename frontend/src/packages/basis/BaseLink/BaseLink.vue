@@ -40,9 +40,11 @@ const isVueLink = computed((): boolean => {
 
 <style lang="scss" scoped>
 .link {
+  position: relative;
   transition: all 0.4s ease;
   text-decoration: underline;
   text-decoration-color: transparent;
+  z-index: 1;
   @include hover {
     &:hover {
       text-decoration: underline;
