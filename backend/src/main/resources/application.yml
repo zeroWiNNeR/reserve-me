@@ -1,0 +1,12 @@
+spring:
+  main:
+    banner-mode: off
+server:
+  port: 8080
+  servlet:
+    session:
+      cookie:
+        name: RMSESSIONID
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
