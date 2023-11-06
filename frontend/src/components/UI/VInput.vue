@@ -139,7 +139,7 @@ const showPassword = (event) => {
     padding: 1rem;
     border: none;
     color: $dark-blue;
-    border-bottom: 0.1rem solid $brand;
+    border-bottom: 0.1rem solid $brown-light;
 
     &.active {
       &::placeholder {
@@ -175,7 +175,7 @@ const showPassword = (event) => {
     left: 0.9rem;
     padding: 0.2rem 0.4rem;
     border-radius: 0.4rem;
-    background-color: $brand-clear;
+    background-color: $brown-light-clear;
     font-family: 'Montserrat Medium';
     @include adaptive-font(1, 1.4);
     transition:

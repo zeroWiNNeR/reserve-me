@@ -25,6 +25,30 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       layout: 'AuthLayout'
     }
+  },
+  {
+    path: '/terms-of-use',
+    name: 'terms-of-use',
+    component: () => import(/* webpackChunkName: "about" */ '@/pages/terms/TermsOfUse.vue'),
+    meta: {
+      layout: 'DefaultLayout'
+    }
+  },
+  {
+    path: '/policy',
+    name: 'policy',
+    component: () => import(/* webpackChunkName: "about" */ '@/pages/policy/Policy.vue'),
+    meta: {
+      layout: 'DefaultLayout'
+    }
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: () => import(/* webpackChunkName: "about" */ '@/pages/profile/profile.vue'),
+    meta: {
+      layout: 'DefaultLayout'
+    }
   }
 ]
 

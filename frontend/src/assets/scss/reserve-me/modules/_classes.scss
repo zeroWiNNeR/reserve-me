@@ -20,6 +20,25 @@
   align-content: center;
 }
 
+.fx-jsb-cl {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.fx-jfs-rw {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.fx-jsb-rw-ac {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
 .row {
   position: relative;
   width: 100%;

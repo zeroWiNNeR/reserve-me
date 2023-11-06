@@ -38,7 +38,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   border-radius: 2.4rem;
-  background: $brand;
+  background: $green-light;
 }
 
 @media screen and (max-width: 374px) {
@@ -100,4 +100,15 @@ button {
   outline: none;
   border: none;
   background-color: transparent;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h2 {
+  @include adaptive-font(2.6, 2);
+}
+p {
+  @include adaptive-font(1.6, 1.4);
 }

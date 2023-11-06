@@ -18,10 +18,18 @@
 }
 
 .header {
-  position: sticky;
+  //position: sticky;
+  position: fixed;
   z-index: $Zheader;
   top: 0;
   width: 100%;
+  @include tablet-desktop {
+    padding: 2rem 10rem;
+  }
+  @include mobile {
+    padding: 1rem 2rem 0;
+    background-color: $white;
+  }
 }
 
 .wrapper {

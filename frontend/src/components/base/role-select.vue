@@ -14,7 +14,7 @@ const isBusiness = ref(false)
 const business = () => {
   isBusiness.value = true
   isClient.value = false
-  emit('changeType', 'business')
+  emit('changeType', 'owner')
 }
 
 const client = () => {
@@ -30,7 +30,7 @@ span {
   opacity: 0.25;
   transition: all 0.3s ease;
   &.active {
-    color: $brand;
+    color: $brown-light;
     opacity: 1;
     @include hover {
       &:hover {
@@ -40,7 +40,7 @@ span {
   }
   @include hover {
     &:hover {
-      color: $brand;
+      color: $brown-light;
       opacity: 0.5;
     }
   }

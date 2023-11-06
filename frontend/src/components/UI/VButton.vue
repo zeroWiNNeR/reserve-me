@@ -42,7 +42,7 @@ const props = defineProps({
   width: 100%;
   padding: 1rem;
   border-radius: 0.4rem;
-  background-color: $brand;
+  background-color: $brown-light;
   color: $white;
   font-family: 'Montserrat Medium';
   @include adaptive-font(1.6, 1.4);
@@ -50,11 +50,11 @@ const props = defineProps({
   cursor: pointer;
   @include hover {
     &:hover {
-      background-color: $brand-drk;
+      background-color: $brown-light-drk;
     }
   }
   &:focus {
-    background-color: $brand-drk;
+    background-color: $brown-light-drk;
   }
 }
 </style>
