@@ -3,7 +3,7 @@
     <div class="auth-wrapper">
       <div class="reg">
         <h1 class="reg__title">
-          Sign up /
+          {{ signType }} /
           <role-select @changeType="userType($event)" />
         </h1>
         <div v-if="signUpShow">
@@ -36,7 +36,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import FormRow from '@/components/rows/form-row.vue'
 import RoleSelect from '@/components/base/role-select.vue'
 
@@ -50,6 +50,7 @@ const userType = (type) => {
 const changeTabs = () => {
   signUpShow.value === false ? (signUpShow.value = true) : (signUpShow.value = false)
 }
+const signType = computed(() => (signUpShow.value === false ? 'Sign in' : 'Sign up'))
 </script>
 
 <style lang="scss" scoped>

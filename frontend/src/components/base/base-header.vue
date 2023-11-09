@@ -16,8 +16,8 @@
         </li>
       </ul>
     </nav>
-    <button v-if="isMobile" class="navigation__burger" @click="togglePopupMobileMenu({ status: true })">
-      <v-icon icon="burger" />
+    <button v-if="isMobile" class="navigation__burger" @click="menuHandler">
+      <v-icon :icon="popupMobileMenu.status ? 'close' : 'burger'" />
     </button>
   </div>
 </template>
@@ -34,7 +34,11 @@ const isAuth = ref(false)
 const popupsStore = usePopupStore()
 const { popupMobileMenu } = storeToRefs(popupsStore)
 const { isMobile, isTabletDesktop } = storeToRefs(useMediaQueriesStore())
-console.log(popupMobileMenu)
+const menuHandler = () => {
+  popupMobileMenu.value.status === false
+    ? togglePopupMobileMenu({ status: true })
+    : togglePopupMobileMenu({ status: false })
+}
 </script>
 
 <style lang="scss" scoped>

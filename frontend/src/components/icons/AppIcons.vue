@@ -56,6 +56,9 @@
         <path opacity="0.7" d="M20 12H4" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
         <path d="M20 17H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
       </symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <path d="M7 7L17 17M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
     </svg>
   </div>
 </template>
