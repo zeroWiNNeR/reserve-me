@@ -3,10 +3,12 @@ const { defineConfig } = require('@vue/cli-service')
 const isProduction = true
 
 module.exports = defineConfig({
-  transpileDependencies: true,
+  transpileDependencies: ['quasar'],
+
   productionSourceMap: false,
   publicPath: isProduction ? '/reserve-me' : '/',
   assetsDir: './assets',
+
   css: {
     loaderOptions: {
       scss: {
@@ -18,6 +20,7 @@ module.exports = defineConfig({
       }
     }
   },
+
   configureWebpack: {
     optimization: {
       splitChunks: {
@@ -38,5 +41,12 @@ module.exports = defineConfig({
 
   chainWebpack(config) {
     config.optimization.delete('splitChunks')
+  },
+
+  pluginOptions: {
+    quasar: {
+      importStrategy: 'kebab',
+      rtlSupport: false
+    }
   }
 })
