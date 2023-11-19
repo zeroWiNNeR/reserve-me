@@ -5,7 +5,7 @@ import { createPinia } from 'pinia'
 import router from '@/router'
 import { packages } from '@/packages/'
 
-import '@/assets/scss/reserve-me/index.scss'
+import '@/assets/scss/app-online/index.scss'
 import VInput from '@/components/UI/VInput.vue'
 import VIcon from '@/components/UI/VIcon.vue'
 import VButton from '@/components/UI/VButton.vue'

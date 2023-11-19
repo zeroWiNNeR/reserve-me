@@ -6,16 +6,16 @@ module.exports = defineConfig({
   transpileDependencies: ['quasar'],
 
   productionSourceMap: false,
-  publicPath: isProduction ? '/reserve-me' : '/',
+  publicPath: isProduction ? '/app-online' : '/',
   assetsDir: './assets',
 
   css: {
     loaderOptions: {
       scss: {
         additionalData: `
-          @import "@/assets/scss/reserve-me/global/colors.scss";
-          @import "@/assets/scss/reserve-me/global/mixins.scss";
-          @import "@/assets/scss/reserve-me/global/vars.scss";
+          @import "@/assets/scss/app-online/global/colors.scss";
+          @import "@/assets/scss/app-online/global/mixins.scss";
+          @import "@/assets/scss/app-online/global/vars.scss";
         `
       }
     }
